@@ -14,8 +14,7 @@ Figure out how to make it so that if the user doesn’t enter either add, subtra
 
 // ADD A FUNCTION CALLED CALCULATE
 function calculate(x, y, operation){
-    if (isNaN(x) || isNaN(y)){return 'Error in input'}
-    else if (operation==='-' || operation==='subtract'){return x-y}
+    if (operation==='-' || operation==='subtract'){return x-y}
     else if (operation==='*' || operation==='multiply'){return x*y}
     else if (operation==='/' || operation==='divide'){return x/y}
     else if (operation==='+' || operation==='add'){return x+y}
@@ -39,5 +38,8 @@ while (true){
 
 
 // CALL THE FUNCTION AND RETURN THE RESULT WITHIN AN ALERT
-let message = `${firstNumber} ${operation} ${secondNumber} = ${calculate(firstNumber, secondNumber, operation)}`
-alert(message);
+if (isNaN(firstNumber) || isNaN(secondNumber)){alert ('Error in input')}
+else {
+    let message = `${firstNumber} ${operation} ${secondNumber} = ${calculate(firstNumber, secondNumber, operation)}`;
+    alert(message);
+}
